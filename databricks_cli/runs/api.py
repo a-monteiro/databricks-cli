@@ -32,8 +32,8 @@ class RunsApi(object):
         return self.client.client.perform_query('POST', '/jobs/runs/submit', data=json,
                                                 version=version)
 
-    def list_runs(self, job_id, active_only, completed_only, offset, limit, version=None):
-        return self.client.list_runs(job_id, active_only, completed_only, offset, limit,
+    def list_runs(self, job_id, active_only, completed_only, offset, limit, expand_tasks=None, version=None):
+        return self.client.list_runs(job_id, active_only, completed_only, offset, limit, expand_tasks=expand_tasks,
                                      version=version)
 
     def get_run(self, run_id, version=None):
